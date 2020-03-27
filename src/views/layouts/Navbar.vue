@@ -12,45 +12,15 @@
           </button>
           <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
             <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
-              <li class="nav-item"><a class="nav-link" href="indexUser.html">Home</a></li>
-              <li class="nav-item"><a class="nav-link" href="category.html">Kategori</a></li>
-              <li class="nav-item"><a class="nav-link" href="IklanSaya.html">Iklan Saya</a></li>
-              <li class="nav-item"><a class="nav-link" href="Formcrud.html">Pasang Iklan</a></li>
-
-              <!-- <li class="nav-item submenu dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                  aria-expanded="false">Category</a>
-                <ul class="dropdown-menu">
-                  <li class="nav-item"><a class="nav-link" href="category.html">Shop Category</a></li>
-                  <li class="nav-item"><a class="nav-link" href="single-product.html">Product Details</a></li>
-                  <li class="nav-item"><a class="nav-link" href="checkout.html">Product Checkout</a></li>
-                  <li class="nav-item"><a class="nav-link" href="confirmation.html">Confirmation</a></li>
-                  <li class="nav-item"><a class="nav-link" href="cart.html">Shopping Cart</a></li>
-                </ul>
-							</li> -->
-              <!-- <li class="nav-item submenu dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                  aria-expanded="false">Blog</a>
-                <ul class="dropdown-menu">
-                  <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                  <li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>
-                </ul>
-							</li>
-							<li class="nav-item submenu dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                  aria-expanded="false">Pages</a>
-                <ul class="dropdown-menu">
-                  <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
-                  <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
-                  <li class="nav-item"><a class="nav-link" href="tracking-order.html">Tracking</a></li>
-                </ul>
-              </li>
-              <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li> -->
+              <li class="nav-item"><a class="nav-link" href="/homeuser">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="/kategori">Kategori</a></li>
+              <li class="nav-item"><a class="nav-link" href="/iklan">Iklan Saya</a></li>
+              <li class="nav-item"><a class="nav-link" href="/form">Pasang Iklan</a></li>
             </ul>
 
             <ul class="nav-shop">
               <li class="nav-item"><button><i class="ti-search"></i></button></li>
-              <li class="nav-item"><a class="button button-header" href="#">Logout</a></li>
+              <li class="nav-item"><a class="button button-header" @click="logout">Logout</a></li>
             </ul>
           </div>
         </div>
@@ -58,3 +28,27 @@
     </div>
   </header>
 </template>
+
+<script>
+export default {
+    name: 'navbar',
+    computed : {
+        isLoggedIn : function(){ return this.$store.getters.isLoggedIn}
+    },
+    methods:{
+      logout:function(){
+          let conf = { headers : {"Authorization" : "Bearer " + localStorage.getItem("Authorization")} };
+          let form = new FormData();
+          this.axios.post('/logout', form, conf).then(response => {
+            if (response.data.logged === false || response.data.status === 0) {
+                this.$store.commit('logout')
+                localStorage.removeItem("Authorization")
+                this.$router.push({name: 'login'})
+            }
+          }).catch(error => {
+
+        });
+      },
+  },
+}
+</script>

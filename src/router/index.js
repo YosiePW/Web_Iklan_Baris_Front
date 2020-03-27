@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import store from '../store'
 import Home from '../views/Home.vue'
 import HomeUser from '../views/HomeUser.vue'
 import Footer from '../views/layouts/Footer.vue'
@@ -9,6 +10,8 @@ import FormIklan from '../views/FormIklan.vue'
 import Login from '../views/Login.vue'
 import Register from '../views/Register.vue'
 import IklanSaya from '../views/IklanSaya.vue'
+import Kategori from '../views/Kategori.vue'
+
 
 
 
@@ -26,12 +29,12 @@ const routes = [
     components: {default: Login}
   },
   {
-    path: '/home',
+    path: '/',
     name: 'home',
-    components: {default: Home}
+    components: {default: Home, footer: Footer}
   },
   {
-    path: '/',
+    path: '/homeuser',
     name: 'homeuser',
     components: {default: HomeUser, header: Navbar, footer: Footer},
     // meta: { 
@@ -58,6 +61,14 @@ const routes = [
     path: '/form',
     name: 'form',
     components: {default: FormIklan, header: Navbar},
+    // meta: { 
+    //   requiresAuth: true
+    // }
+  },
+  {
+    path: '/kategori',
+    name: 'kategori',
+    components: {default: Kategori, header: Navbar, footer: Footer},
     // meta: { 
     //   requiresAuth: true
     // }

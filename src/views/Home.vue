@@ -13,45 +13,15 @@
           </button>
           <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
             <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
-              <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+              <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
               <li class="nav-item"><a class="nav-link" href="category.html">Sepatu</a></li>
               <li class="nav-item"><a class="nav-link" href="category.html">Mobil</a></li>
               <li class="nav-item"><a class="nav-link" href="category.html">Jam</a></li>
-
-              <!-- <li class="nav-item submenu dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                  aria-expanded="false">Category</a>
-                <ul class="dropdown-menu">
-                  <li class="nav-item"><a class="nav-link" href="category.html">Shop Category</a></li>
-                  <li class="nav-item"><a class="nav-link" href="single-product.html">Product Details</a></li>
-                  <li class="nav-item"><a class="nav-link" href="checkout.html">Product Checkout</a></li>
-                  <li class="nav-item"><a class="nav-link" href="confirmation.html">Confirmation</a></li>
-                  <li class="nav-item"><a class="nav-link" href="cart.html">Shopping Cart</a></li>
-                </ul>
-							</li> -->
-              <!-- <li class="nav-item submenu dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                  aria-expanded="false">Blog</a>
-                <ul class="dropdown-menu">
-                  <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                  <li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>
-                </ul>
-							</li>
-							<li class="nav-item submenu dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                  aria-expanded="false">Pages</a>
-                <ul class="dropdown-menu">
-                  <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
-                  <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
-                  <li class="nav-item"><a class="nav-link" href="tracking-order.html">Tracking</a></li>
-                </ul>
-              </li>
-              <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li> -->
             </ul>
 
             <ul class="nav-shop">
               <li class="nav-item"><button><i class="ti-search"></i></button></li>
-              <li class="nav-item"><a class="button button-header" href="#">Login</a></li>
+              <li class="nav-item"><a class="button button-header" href="/login">Login</a></li>
             </ul>
           </div>
         </div>
@@ -76,8 +46,8 @@
               <h4>Pusatnya Nge Deal!</h4>
               <h1>Beli atau Jual Semua Bisa</h1>
               <p>Cari barang yang anda butuhkan atau pasang iklan untuk menjual, semua bisa dilakukan disini! Hanya di AROMA</p>
-              <a class="button button-hero" href="#">Register</a>
-              <a class="button button-hero" href="#">Login</a>
+              <a class="button button-hero" href="/register">Register</a>
+              <a class="button button-hero" href="/login">Login</a>
             </div>
           </div>
         </div>
